@@ -36,6 +36,8 @@
     "fish": true,
     "golangci-lint": true,
     "make": true,
+    "markdownlint": true,
+    "mermaid": true,
     "terraform": true,
     "sql": true
   },
