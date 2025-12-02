@@ -2,8 +2,11 @@
 bind \cc 'commandline -r ""'
 
 # Run ls on CTRL + l
-bind \cl 'ls; commandline -f repaint'
+bind \cl 'echo; ls; echo; echo' repaint
 
 # Git bindings
-bind \cS 'git status; echo; commandline -f repaint'
-bind \cG 'git diff; echo; commandline -f repaint'
+bind \cS 'echo; git status; echo; echo' repaint
+bind \cG 'echo; git diff; echo; echo' repaint
+
+# Open editor with CTRL + e
+bind \ce "$VISUAL ."
