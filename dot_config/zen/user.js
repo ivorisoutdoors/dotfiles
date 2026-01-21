@@ -34,3 +34,6 @@ user_pref("browser.tabs.warnOnClose", true);
 
 // use the same search in private windows
 user_pref("browser.search.separatePrivateDefault", false);
+
+// prevent accidental dragging from sidebar
+user_pref("zen.view.draggable-sidebar", false);
