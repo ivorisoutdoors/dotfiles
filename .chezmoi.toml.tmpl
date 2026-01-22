@@ -1,6 +1,6 @@
-{{- $email := promptStringOnce . "email" "Email address" "mloberg@users.noreply.github.com" -}}
+{{- $email := promptStringOnce . "email" "Email address" "ivorisoutdoors@users.noreply.github.com" -}}
 {{- $signingKey := promptStringOnce . "signingKey" "Git signing key" -}}
-{{- $isWork := promptBoolOnce . "isWork" "Work machine" -}}
+{{- $isWork := promptBoolOnce . "isWork" "Is this your work machine?" -}}
 
 [data]
   email = {{ $email | quote }}
