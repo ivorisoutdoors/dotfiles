@@ -1,10 +1,10 @@
 {{- $email := promptStringOnce . "email" "Email address" "ivorisoutdoors@users.noreply.github.com" -}}
 {{- $signingKey := promptStringOnce . "signingKey" "Git signing key" -}}
-{{- $isWork := promptBoolOnce . "isWork" "Is this your work machine?" -}}
+{{- $purpose := promptChoiceOnce . "purpose" "What is the purpose of this machine" (list "Base" "Personal" "Work") -}}
 
 [data]
   email = {{ $email | quote }}
   signingKey = {{ $signingKey | quote }}
-  isWork = {{ $isWork }}
+  purpose = {{ $purpose | quote }}
 [edit]
   command = "zed"

@@ -3,7 +3,6 @@ cask_args appdir: "/Applications"
 tap "homebrew/bundle"
 
 brew "ack"
-brew "antidote"
 brew "aspell"
 brew "bat"
 brew "broot"
@@ -22,30 +21,20 @@ brew "gh"
 brew "git"
 brew "git-delta"
 brew "git-lfs"
-brew "go"
-brew "go-task"
-brew "golangci-lint"
 brew "gron"
 brew "gum"
-brew "hadolint"
 brew "httpie"
-brew "hugo"
 brew "jq"
 brew "lesspipe"
 brew "m-cli"
 brew "mas"
-brew "mkcert"
-brew "nss"
-brew "pre-commit"
 brew "procs"
 brew "proto"
 brew "reattach-to-user-namespace"
 brew "readline"
 brew "ripgrep"
 brew "sd"
-brew "shellcheck"
 brew "starship"
-brew "tflint"
 brew "the_silver_searcher"
 brew "tldr"
 brew "vim"
@@ -55,20 +44,27 @@ brew "yq"
 cask "1password"
 cask "1password-cli"
 cask "aldente"
-cask "docker-desktop"
-cask "elgato-camera-hub"
-cask "elgato-control-center"
-cask "elgato-stream-deck"
-cask "elgato-wave-link"
 cask "firefox"
-cask "ghostty"
 cask "gpg-suite-no-mail"
-cask "obsidian"
 cask "tailscale-app"
-cask "visual-studio-code"
 cask "yubico-authenticator"
-cask "zed"
 cask "zen"
+
+{{ if ne .purpose "Base" -}}
+# Code/dev
+brew "go"
+brew "go-task"
+brew "golangci-lint"
+brew "hadolint"
+brew "hugo"
+brew "mkcert"
+brew "nss"
+brew "pre-commit"
+brew "shellcheck"
+
+cask "docker-desktop"
+cask "ghostty"
+cask "zed"
 
 # Language servers
 brew "golangci-lint-langserver"
@@ -78,12 +74,22 @@ brew "terraform-ls"
 cask "font-fira-code-nerd-font"
 cask "font-maple-mono-nf"
 
+# Meetings
+cask "elgato-camera-hub"
+cask "elgato-control-center"
+cask "elgato-stream-deck"
+cask "elgato-wave-link"
+
 # App Store
-mas "Pages", id: 409201541
+mas "1Password for Safari", id: 1569813296
+mas "Affinity Photo 2", id: 1616822987
+mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+{{- end }}
 
-{{ if .isWork -}}
+{{ if eq .purpose "Work" -}}
 # Work
 tap "hashicorp/tap"
 
@@ -99,6 +105,7 @@ brew "helm"
 brew "mockery"
 brew "opa"
 brew "terraform-docs"
+brew "tflint"
 brew "trivy"
 
 brew "hashicorp/tap/packer"
@@ -108,11 +115,14 @@ cask "notion"
 cask "slack"
 cask "tuple"
 cask "zoom"
-{{- else -}}
+{{ else if eq .purpose "Personal" -}}
 # Personal
 cask "bambu-studio"
 cask "Discord"
 cask "guitar-pro"
+cask "obsidian"
+
+mas "Logic Pro", id: 634148309
 {{- end }}
 
 localbrew = "#{Dir.home}/.Brewfile.local"
