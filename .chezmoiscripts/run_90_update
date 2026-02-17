@@ -1,16 +1,10 @@
 #!/usr/bin/env fish
 
-{{- if lookPath "op" }}
-{{- $gh := set . "gh" "op plugin run -- gh" }}
-{{- else }}
-{{- $gh := set . "gh" "gh" }}
-{{- end }}
-
 # plugins
 fisher update
 
 # gh extensions
-{{ .gh }} extension upgrade --all
+gh extension upgrade --all
 
 # completions
 fish_update_completions

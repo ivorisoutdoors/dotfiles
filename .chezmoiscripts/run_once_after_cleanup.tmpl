@@ -10,7 +10,7 @@ echo "Clear Dock? [y/N] "
 read -r clear
 if [[ "${clear}" =~ ^(y|Y) ]]; then
   echo "Clearing the Dock"
-  m dock prune
+  m dock --prune
 fi
 
 echo "Updating software"

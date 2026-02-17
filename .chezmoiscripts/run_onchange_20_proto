@@ -3,5 +3,6 @@ set -e
 
 export PROTO_HOME="$HOME/.proto"
 
+proto setup
 proto install node lts
 proto install npm bundled

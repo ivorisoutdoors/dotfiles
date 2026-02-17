@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+gh extension install ivorisoutdoors/gh-prs
+gh extension install ivorisoutdoors/gh-view
+gh extension install dlvhdr/gh-dash
