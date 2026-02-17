@@ -5,11 +5,7 @@
 [credential]
   helper = {{ if eq .chezmoi.os "darwin" }}osxkeychain{{ else }}cache{{ end }}
 [gpg]
-  {{- if eq (printf "%.3s" .signingKey) "ssh" }}
   format = ssh
-  {{- else }}
-  program = gpg
-  {{- end }}
 [gpg "ssh"]
   allowedSignersFile = ~/.ssh/allowed_signers
 [commit]

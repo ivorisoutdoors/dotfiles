@@ -1,4 +1,4 @@
-node = "22.13.1"
+node = "lts"
 npm = "bundled"
 
 [tools.node]

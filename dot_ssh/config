@@ -1,0 +1,20 @@
+Host github.com
+  User git
+  ControlMaster no
+
+Host *
+  AddressFamily inet
+  HashKnownHosts yes
+  VisualHostKey yes
+  PasswordAuthentication no
+  StrictHostKeyChecking ask
+  VerifyHostKeyDNS yes
+  ForwardAgent no
+  ForwardX11 no
+  ForwardX11Trusted no
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+  AddKeysToAgent yes
+  IdentityAgent none
+
+Include config.local
