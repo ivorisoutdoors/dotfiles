@@ -1,5 +1,5 @@
-{{- $email := promptStringOnce . "email" "Email address" "ivorisoutdoors@users.noreply.github.com" -}}
-{{- $signingKey := promptStringOnce . "signingKey" "Git signing key" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $signingKey := promptStringOnce . "signingKey" "Git signing key" "~/.ssh/id_ed25519_sk.pub" -}}
 {{- $purpose := promptChoiceOnce . "purpose" "What is the purpose of this machine" (list "Base" "Personal" "Work") -}}
 
 [data]
