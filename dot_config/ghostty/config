@@ -1,6 +1,6 @@
 theme = yonce
 font-family = DankMono Nerd Font
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-env
 window-save-state = always
 
 keybind = cmd+shift+left=previous_tab
